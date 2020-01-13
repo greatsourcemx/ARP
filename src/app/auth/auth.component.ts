@@ -39,8 +39,7 @@ export class AuthComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  ingresar(forma: NgForm) {
-
+  ingresar( forma: NgForm ) {
     this._usuarioService.iniciarSesion( this.user )
     .subscribe((user: Usuario) => {
       this.user = user;
@@ -48,7 +47,6 @@ export class AuthComponent implements OnInit, OnDestroy {
     }, error => {
       swal('Aviso!', 'Usuario o contraseña incorrectos', 'warning');
     });
-
   }
 
 }
